@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PagWebAnime": {
+    "animeAngular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pag-web-anime",
+            "outputPath": "dist/anime-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "PagWebAnime:build:production"
+              "browserTarget": "animeAngular:build:production"
             },
             "development": {
-              "browserTarget": "PagWebAnime:build:development"
+              "browserTarget": "animeAngular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PagWebAnime:build"
+            "browserTarget": "animeAngular:build"
           }
         },
         "test": {
@@ -89,7 +89,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [ 
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/js/scripts.js"
+          ]
           }
         }
       }
