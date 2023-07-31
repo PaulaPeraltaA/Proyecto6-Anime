@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 //Importación de la interfaz
-import { Root2 } from '../interface/root';
+import { Anime } from '../interface/root';
 
 //Importación del servicio
 import { RootService } from '../providers/root.service';
@@ -11,15 +11,16 @@ import { RootService } from '../providers/root.service';
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
+
 export class ServicesComponent {
   constructor(private dataProvider: RootService) { }
 
   //Atributo con el tipo de dato de la interfaz
-  public data : Root2[] = [];
+  public data : Anime[] = [];
 
   ngOnInit() {
     this.dataProvider.getResponse().subscribe((response) => { 
-      this.data = (response as Root2[]); 
+      this.data = (response as Anime[]); 
     })
   }
 
